@@ -32,7 +32,7 @@ export const Button = styled.button`
   &:hover,
   &:focus {
     filter: drop-shadow(0px 0px 20px #a201ff);
-    color: #00ffff;
+    color: #a201ff;
     border: 2px solid #00ffff;
   }
 `;
