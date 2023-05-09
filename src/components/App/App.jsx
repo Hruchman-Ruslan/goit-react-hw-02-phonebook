@@ -1,11 +1,11 @@
 import { Component } from 'react';
-
-import contactDefault from '../data/contacts.json';
-
-import { FormContact } from 'components/Form/FormContact/Form';
-import { ContactList } from 'components/Form/Contacts/Contacts';
-import { Filter } from 'components/Form/Filter/Filter';
 import { nanoid } from 'nanoid';
+import contactDefault from '../../data/contacts.json';
+
+import { FormContact } from 'components/Form/Form';
+import { ContactList } from 'components/Contacts/Contacts';
+import { Filter } from 'components/Filter/Filter';
+import { Notification } from 'components/Notification/Notification';
 
 import { Container, Section, Title, TitleContacts } from '../index';
 
@@ -15,14 +15,16 @@ export class App extends Component {
     filter: '',
   };
 
-  addContact = ({ name, number }) => {
+  addContact = contact => {
     const { contacts } = this.state;
-    const existingContact = contacts.find(contact => contact.name === name);
+    const existingContact = contacts.find(
+      ({ name }) => contact.name.toLowerCase() === name.toLowerCase()
+    );
     if (existingContact) {
-      alert(`${name} is already in contacts.`);
+      alert(`${contact.name} is already in contacts.`);
       return;
     }
-    const newContact = { id: nanoid(), name, number };
+    const newContact = { id: nanoid(), ...contact };
     this.setState({
       contacts: [...contacts, newContact],
     });
@@ -59,7 +61,11 @@ export class App extends Component {
         <Section>
           <TitleContacts>Contacts</TitleContacts>
           <Filter value={filter} onChange={this.changeFilter} />
-          <ContactList contacts={contacts} onDelete={this.deleteContact} />
+          {contacts.length > 0 ? (
+            <ContactList contacts={contacts} onDelete={this.deleteContact} />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
         </Section>
       </Container>
     );
