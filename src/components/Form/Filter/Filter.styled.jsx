@@ -17,4 +17,11 @@ export const Input = styled.input`
   outline: 1px solid aqua;
 
   margin-top: 20px;
+
+  filter: drop-shadow(0px 0px 20px #00ffff);
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 0px 20px #a201ff);
+  }
 `;

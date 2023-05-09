@@ -21,8 +21,18 @@ export const Button = styled.button`
   font-size: 18px;
   font-weight: 700;
 
-  padding: 8px;
+  padding: 8px 28px;
+  color: #a201ff;
 
   border: 2px solid purple;
   border-radius: 8px;
+
+  filter: drop-shadow(0px 0px 20px #00ffff);
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 0px 20px #a201ff);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+  }
 `;
