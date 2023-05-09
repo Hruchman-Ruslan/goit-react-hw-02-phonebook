@@ -7,7 +7,6 @@ import { ContactList } from 'components/Form/Contacts/Contacts';
 import { Filter } from 'components/Form/Filter/Filter';
 import { nanoid } from 'nanoid';
 
-// import { Formik, Form, Field } from 'formik';
 import { Container, Section, Title, TitleContacts } from '../index';
 
 export class App extends Component {
