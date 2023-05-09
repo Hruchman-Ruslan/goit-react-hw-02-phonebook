@@ -9,7 +9,7 @@ export const GlobalStyles = css`
     margin: 0;
     background-color: black;
     color: aqua;
-    font-size: 32px;
+    font-size: 18px;
 
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
